@@ -1,4 +1,4 @@
-import { SPACE } from "./consts";
+import { SPACE } from "./consts.mjs";
 const toLower = (value)=>value.toLowerCase();
 const toUpper = (value)=>value.toUpperCase();
 const capitalize = (value)=>[

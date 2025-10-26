@@ -19,7 +19,7 @@ _export(exports, {
         return toUpper;
     }
 });
-const _consts = require("./consts");
+const _consts = require("./consts.cjs");
 const toLower = (value)=>value.toLowerCase();
 const toUpper = (value)=>value.toUpperCase();
 const capitalize = (value)=>[

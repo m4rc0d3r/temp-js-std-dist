@@ -1,4 +1,4 @@
-import { EMPTY } from "./str";
+import { EMPTY } from "./str/index.mjs";
 function isFalsy(value) {
     return value === false || value === EMPTY || value === 0 || value === 0n || typeof value === "number" && isNaN(value) || value === null || value === undefined;
 }
