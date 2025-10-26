@@ -1,41 +1,65 @@
-'use strict';
-
-const EMPTY = "";
-const SPACE = " ";
-const NEW_LINE = "\n";
-const SLASH = "/";
-const BACKSLASH = "\\";
-const COLON = ":";
-
-const toLower = (value) => value.toLowerCase();
-const toUpper = (value) => value.toUpperCase();
-const capitalize = (value) => [value[0]?.toUpperCase(), value].join(SPACE);
-
-const index = {
-  __proto__: null,
-  BACKSLASH: BACKSLASH,
-  COLON: COLON,
-  EMPTY: EMPTY,
-  NEW_LINE: NEW_LINE,
-  SLASH: SLASH,
-  SPACE: SPACE,
-  capitalize: capitalize,
-  toLower: toLower,
-  toUpper: toUpper
-};
-
-function isFalsy(value) {
-  return value === false || value === EMPTY || value === 0 || value === 0n || typeof value === "number" && isNaN(value) || value === null || value === void 0;
+"use strict";
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+function _export(target, all) {
+    for(var name in all)Object.defineProperty(target, name, {
+        enumerable: true,
+        get: Object.getOwnPropertyDescriptor(all, name).get
+    });
 }
-function isTruthy(value) {
-  return !isFalsy(value);
+_export(exports, {
+    get Bool () {
+        return _bool;
+    },
+    get Num () {
+        return _num;
+    },
+    get Str () {
+        return _str;
+    }
+});
+const _bool = /*#__PURE__*/ _interop_require_wildcard(require("./bool.cjs"));
+const _num = /*#__PURE__*/ _interop_require_wildcard(require("./num.cjs"));
+const _str = /*#__PURE__*/ _interop_require_wildcard(require("./str/index.cjs"));
+function _getRequireWildcardCache(nodeInterop) {
+    if (typeof WeakMap !== "function") return null;
+    var cacheBabelInterop = new WeakMap();
+    var cacheNodeInterop = new WeakMap();
+    return (_getRequireWildcardCache = function(nodeInterop) {
+        return nodeInterop ? cacheNodeInterop : cacheBabelInterop;
+    })(nodeInterop);
 }
-
-const bool = {
-  __proto__: null,
-  isFalsy: isFalsy,
-  isTruthy: isTruthy
-};
-
-exports.Bool = bool;
-exports.Str = index;
+function _interop_require_wildcard(obj, nodeInterop) {
+    if (!nodeInterop && obj && obj.__esModule) {
+        return obj;
+    }
+    if (obj === null || typeof obj !== "object" && typeof obj !== "function") {
+        return {
+            default: obj
+        };
+    }
+    var cache = _getRequireWildcardCache(nodeInterop);
+    if (cache && cache.has(obj)) {
+        return cache.get(obj);
+    }
+    var newObj = {
+        __proto__: null
+    };
+    var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor;
+    for(var key in obj){
+        if (key !== "default" && Object.prototype.hasOwnProperty.call(obj, key)) {
+            var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null;
+            if (desc && (desc.get || desc.set)) {
+                Object.defineProperty(newObj, key, desc);
+            } else {
+                newObj[key] = obj[key];
+            }
+        }
+    }
+    newObj.default = obj;
+    if (cache) {
+        cache.set(obj, newObj);
+    }
+    return newObj;
+}
