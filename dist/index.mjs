@@ -9,6 +9,19 @@ const toLower = (value) => value.toLowerCase();
 const toUpper = (value) => value.toUpperCase();
 const capitalize = (value) => [value[0]?.toUpperCase(), value].join(SPACE);
 
+const index = {
+  __proto__: null,
+  BACKSLASH: BACKSLASH,
+  COLON: COLON,
+  EMPTY: EMPTY,
+  NEW_LINE: NEW_LINE,
+  SLASH: SLASH,
+  SPACE: SPACE,
+  capitalize: capitalize,
+  toLower: toLower,
+  toUpper: toUpper
+};
+
 function isFalsy(value) {
   return value === false || value === EMPTY || value === 0 || value === 0n || typeof value === "number" && isNaN(value) || value === null || value === void 0;
 }
@@ -16,4 +29,10 @@ function isTruthy(value) {
   return !isFalsy(value);
 }
 
-export { BACKSLASH, COLON, EMPTY, NEW_LINE, SLASH, SPACE, capitalize, isFalsy, isTruthy, toLower, toUpper };
+const bool = {
+  __proto__: null,
+  isFalsy: isFalsy,
+  isTruthy: isTruthy
+};
+
+export { bool as Bool, index as Str };
