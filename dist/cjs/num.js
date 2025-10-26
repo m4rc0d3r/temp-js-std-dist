@@ -14,7 +14,11 @@ _export(exports, {
     },
     get isOdd () {
         return isOdd;
+    },
+    get toInt () {
+        return toInt;
     }
 });
 const isEven = (value)=>value % 2 === 0;
 const isOdd = (value)=>!isEven(value);
+const toInt = (value)=>Math.floor(value);

@@ -16,7 +16,7 @@ _export(exports, {
         return isTruthy;
     }
 });
-const _str = require("./str/index.cjs");
+const _str = require("./str");
 function isFalsy(value) {
     return value === false || value === _str.EMPTY || value === 0 || value === 0n || typeof value === "number" && isNaN(value) || value === null || value === undefined;
 }
