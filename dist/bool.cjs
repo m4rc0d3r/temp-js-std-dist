@@ -21,7 +21,7 @@ _export(exports, {
 });
 const _str = require("./str/index.cjs");
 function isFalsy(value) {
-    return value === 0 || value === false || value === _str.EMPTY || value === 0n || typeof value === "number" && isNaN(value) || value === null || value === undefined;
+    return value === 0 || value === _str.EMPTY || value === false || value === 0n || typeof value === "number" && isNaN(value) || value === null || value === undefined;
 }
 function isTruthy(value) {
     return !isFalsy(value);
