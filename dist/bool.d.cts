@@ -1,7 +1,9 @@
+import type { Entries } from "type-fest";
 type Falsy = false | 0 | 0n | "" | null | undefined;
 type Truthy<T> = Exclude<T, Falsy>;
 declare function isFalsy(value: unknown): value is Falsy;
 declare function isTruthy<T>(value: T): value is Truthy<T>;
 declare function isTrue(value: unknown): value is true;
+type ObjEntries<T> = Entries<T>;
 export { isFalsy, isTrue, isTruthy };
-export type { Falsy, Truthy };
+export type { Falsy, ObjEntries, Truthy };

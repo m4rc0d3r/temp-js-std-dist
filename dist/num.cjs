@@ -9,9 +9,6 @@ function _export(target, all) {
     });
 }
 _export(exports, {
-    get default () {
-        return parseJson;
-    },
     get isEven () {
         return isEven;
     },
@@ -21,8 +18,14 @@ _export(exports, {
     get isOdd () {
         return isOdd;
     },
+    get parseJson () {
+        return parseJson;
+    },
     get toInt () {
         return toInt;
+    },
+    get toJson () {
+        return toJson;
     }
 });
 const isEven = (value)=>value % 2 === 0;
@@ -31,4 +34,7 @@ const toInt = (value)=>Math.floor(value);
 const isInt = (value)=>Number.isInteger(value);
 function parseJson(value) {
     return JSON.parse(value);
+}
+function toJson(value) {
+    JSON.stringify(value);
 }
